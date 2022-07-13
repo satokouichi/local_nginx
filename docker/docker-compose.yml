@@ -24,8 +24,6 @@ services:
                 - NODEJS_VERSION_MAJOR=${NODEJS_VERSION_MAJOR}
         volumes:
             - ../src:/var/www/html
-        #networks:
-            #- default
 
     # db
     db:
@@ -38,7 +36,6 @@ services:
             - "${DB_PORT}:3306"
         volumes:
             - db-store:/var/lib/mysql
-            - ../doc/db:/doc/db
         environment:
             MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
             MYSQL_DATABASE: ${DB_DATABASE}
