@@ -1,3 +1,8 @@
+# git 設定
+git config --local -l
+git config --local user.name "kamimura"
+git config --local user.email "kamimura@access-jp.co.jp"
+
 # 起動・再起動・全削除
 docker-compose up -d
 docker-compose restart
