@@ -24,8 +24,6 @@ services:
                 - NODEJS_VERSION_MAJOR=${NODEJS_VERSION_MAJOR}
         volumes:
             - ../src:/var/www/html
-        networks:
-            - default
 
     # db
     db:
