@@ -12,6 +12,8 @@ services:
         volumes:
             - ../src:/var/www/html
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - app
 
     # app
     app:
@@ -24,6 +26,8 @@ services:
                 - NODEJS_VERSION_MAJOR=${NODEJS_VERSION_MAJOR}
         volumes:
             - ../src:/var/www/html
+        depends_on:
+            - db
 
     # db
     db:
