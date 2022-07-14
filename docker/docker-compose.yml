@@ -42,6 +42,24 @@ services:
             MYSQL_USER: ${DB_USER}
             MYSQL_PASSWORD: ${DB_PASSWORD}
 
+    # db2
+    db2:
+        container_name: ${COMPOSE_PROJECT_NAME}_db2
+        build:
+            context: ./mariadb
+            args:
+                - MARIADB_VERSION=${MARIADB_VERSION}
+        ports:
+            - "${DB_PORT2}:3306"
+        volumes:
+            - db-store2:/var/lib/mysql
+        environment:
+            TZ: ${TIMEZONE}
+            MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE2}
+            MYSQL_USER: ${DB_USER}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+
     # mail
     mail:
         container_name: ${COMPOSE_PROJECT_NAME}_mail
@@ -58,5 +76,7 @@ services:
 volumes:
     db-store:
         name: ${COMPOSE_PROJECT_NAME}_db_store
+    db-store2:
+        name: ${COMPOSE_PROJECT_NAME}_db_store2
     mail-store:
         name: ${COMPOSE_PROJECT_NAME}_mail_store
