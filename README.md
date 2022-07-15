@@ -8,8 +8,8 @@ docker-compose up -d
 docker-compose restart
 docker-compose down --rmi all --volumes --remove-orphans
 docker ps
-docker cp 5b0c460531b0:/etc/nginx/server.crt ./nginx/ssl
-docker cp 5b0c460531b0:/etc/nginx/server.key ./nginx/ssl
+docker cp 5ac9e01020bf:/etc/nginx/server.crt ./nginx/ssl
+docker cp 5ac9e01020bf:/etc/nginx/server.key ./nginx/ssl
 
 # laravelインストール
 composer create-project --prefer-dist laravel/laravel . "9.*"
